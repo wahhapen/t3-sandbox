@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 import { Posts } from "../components/Posts";
 import { UserAvatar } from "../components/UserAvatar";
 import { trpc } from "../utils/trpc";
@@ -14,12 +15,12 @@ const Home: NextPage = () => {
       return (
         <div className="flex justify-end items-center gap-3">
           To be cool try to{" "}
-          <a
+          <Link
             className="hover:scale-105 cursor-pointer duration-500 justify-center items-center text-center rounded shadow-xl border-2 border-gray-500 w-24 p-2"
             href="/api/auth/signin"
           >
             login
-          </a>
+          </Link>
         </div>
       );
     } else {
