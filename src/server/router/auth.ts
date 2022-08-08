@@ -17,6 +17,13 @@ export const authRouter = createRouter()
   })
   .query("getSecretMessage", {
     async resolve({ ctx }) {
+      console.log("ctx.session", ctx.session);
+
       return "You are logged in and can see this secret message!";
+    },
+  })
+  .query("getCurrentUser", {
+    async resolve({ ctx }) {
+      return ctx.session!.user;
     },
   });
